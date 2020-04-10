@@ -7,6 +7,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem "bootstrap-sass", ">= 3.4.1"
 gem 'carrierwave'
 gem 'rmagick'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'

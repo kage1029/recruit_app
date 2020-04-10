@@ -1,0 +1,33 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#global-header {
+  height: 60px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  min-width: 980px;
+  z-index: 1000;
+  -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 0 4px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.1);
+}
+
+#logo{
+  margin-left: 10px;
+  font-size: 50px;
+  color: #fff;
+  background-color: #006F8E;
+}
+
+nav{
+  overflow: hidden;
+  font-weight: bold;
+  list-style: none;
+  display: inline;
+  margin: 0 20px;
+  padding: 10px 0;
+  text-decoration: none;
+}

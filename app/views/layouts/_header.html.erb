@@ -1,11 +1,15 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse" id="global-header">
   <div class="container">
-    <%= link_to "R", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",    root_path %></li>
-        <li><%= link_to "Users",    users_url %></li>
-      </ul>  
-    </nav>
+    <h1><%= link_to "R", root_path, id: "logo" %></h1>
+      <nav>
+        <div class="nav-left">
+          <%= link_to "募集一覧",    root_path %>
+          <%= link_to "人一覧",    users_url %>
+        </div>
+        <div class="nav-rigth">
+          <%= link_to "ユーザー登録はこちら", new_user_registration_path %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: "delete" %>
+        </div>
+      </nav>
   </div>
 </header>
