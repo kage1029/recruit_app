@@ -1,6 +1,6 @@
 class UserProfilesController < ApplicationController
   before_action :set_user_profile, only: [:show, :edit, :update, :destroy]
-  params.require(:user).permit(:image)
+  # params.require(:user_profile).permit(:image)
 
 
   # GET /user_profiles
@@ -27,6 +27,7 @@ class UserProfilesController < ApplicationController
   # POST /user_profiles.json
   def create
     @user_profile = UserProfile.new(user_profile_params)
+    @user_profile.user_id = current_user.id
 
     respond_to do |format|
       if @user_profile.save
@@ -72,5 +73,13 @@ class UserProfilesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_profile_params
       params.require(:user_profile).permit(:user_id)
+      params.require(:user_profile).permit(:image)
+    end
+
+    def correct_user
+      @user_profile = current_user.user_profiles.find_by(id: params[:id])
+      unless user_profile
+        redirect_to root_url
+      end
     end
 end
