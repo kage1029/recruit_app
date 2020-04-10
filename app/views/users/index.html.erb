@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+<%= link_to "ユーザー登録はこちら", new_user_registration_path %>
+<%= link_to "ログアウト", destroy_user_session_path, method: "delete" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>email</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

@@ -1,1 +1,2 @@
 rails g scaffold User
+rails g scaffold User_profile user_id:integer 
