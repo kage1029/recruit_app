@@ -81,6 +81,7 @@ body{
 
 /* footer */
 footer{
+  margin-top: auto;
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;

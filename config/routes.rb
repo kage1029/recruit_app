@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :user_profiles
-  get 'users/new'
   devise_for :users
   resources :posts
   resources :users
