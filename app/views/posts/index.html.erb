@@ -13,10 +13,6 @@
       <p>タイトル：<%= post.title %></p>
       <p>本文：<%= post.content %></p>
       <%= link_to '詳細を見る', post %>
-      <% if post.user_id == current_user.id %>
-        <%= link_to '編集', edit_post_path(post) %>
-        <%= link_to '削除', post, method: :delete, data: { confirm: '記事を削除してもよろしいですか?' } %>
-      <% end %>
     </div>
   <% end %>
 </div>
