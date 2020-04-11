@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* header */
 #global-header {
   height: 60px;
   position: absolute;
@@ -46,12 +47,42 @@ nav{
   float: right;
 }
 
+
+/* body */
 body{
   padding-top: 60px;
 }
 
 .post{
+  width: 560px;
+  height: 524px;
+  text-align: center;
   margin: 30px 30px;
   padding: 10px;
   border-bottom: 1px solid #e3e3e3;
+}
+
+.side-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  width: 300px;
+  color: #fff;
+  background: #30b298;
+  margin-left: 300px;
+}
+
+.main-container{
+  margin-left: 600px;
+}
+
+/* footer */
+footer{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  border-top: 1px solid #e3e3e3;
 }

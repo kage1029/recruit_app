@@ -1,18 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>記事一覧（posts）</h1>
+<div class="main-container">
+  <h1>記事一覧（posts）</h1>
 
-<% @posts.each do |post| %>
-  <div class="post">
-    <%= post.user_id %>
-    <%= post.title %>
-    <%= post.content %>
-    <%= link_to '詳細を見る', post %>
-    <% if post.user_id == current_user.id %>
-      <%= link_to '編集', edit_post_path(post) %>
-      <%= link_to '削除', post, method: :delete, data: { confirm: '記事を削除してもよろしいですか?' } %>
-    <% end %>
-  </div>
-<% end %>
+  <%= link_to '記事を投稿する', new_post_path %>
 
-<%= link_to '記事を投稿する', new_post_path %>
+  <% @posts.each do |post| %>
+    <div class="post">
+      <img src="https://dime.jp/genre/files/2020/02/shutterstock_572338033-770x514.jpg"　width="560" height="228">
+      <p>ユーザID：<%= post.user_id %></p>
+      <p>タイトル：<%= post.title %></p>
+      <p>本文：<%= post.content %></p>
+      <%= link_to '詳細を見る', post %>
+      <% if post.user_id == current_user.id %>
+        <%= link_to '編集', edit_post_path(post) %>
+        <%= link_to '削除', post, method: :delete, data: { confirm: '記事を削除してもよろしいですか?' } %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
