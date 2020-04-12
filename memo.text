@@ -1,3 +1,3 @@
 rails g scaffold User
 rails g scaffold User_profile user_id:integer 
-rails g migration AddImageToUser_profile image:string
+rails g migration AddBirthdayToUser Birthday:integer
