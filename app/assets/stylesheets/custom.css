@@ -79,6 +79,10 @@ body{
   margin-left: 600px;
 }
 
+.form-container{
+  text-align: center;
+}
+
 /* footer */
 footer{
   margin-top: auto;

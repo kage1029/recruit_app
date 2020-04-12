@@ -6,6 +6,9 @@
   <thead>
     <tr>
       <th>ユーザID</th>
+      <th>名前</th>
+      <th>性別</th>
+      <th>誕生日</th>
       <th>メールアドレス</th>
       <th colspan="2"></th>
     </tr>
@@ -15,12 +18,11 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.sex %></td>
+        <td><%= user.birthday %></td>
         <td><%= user.email %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
