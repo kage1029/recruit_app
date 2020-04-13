@@ -1,21 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="post-detail">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
+  <% if @post.user_id == current_user.id %>
+    <%= link_to '編集', edit_post_path(@post) %>
+    <%= link_to '削除', @post, method: :delete, data: { confirm: '記事を削除してもよろしいですか?' } %>
+  <% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+  <p>
+    <strong>職種:</strong>
+    <%= @post.occupation %>
+  </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+  <h1>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </h1>
 
-<% if @post.user_id == current_user.id %>
-  <%= link_to '編集', edit_post_path(@post) %>
-  <%= link_to '削除', @post, method: :delete, data: { confirm: '記事を削除してもよろしいですか?' } %>
-<% end %>
+  <% if @post.image? %>
+      <%= image_tag @post.image.url %>
+  <% else %>
+    <img src="https://dime.jp/genre/files/2020/02/shutterstock_572338033-770x514.jpg"　width="560" height="228">
+  <% end %>
+
+  <p>
+    <strong>Content:</strong>
+    <%= @post.content %>
+  </p>
+</div>

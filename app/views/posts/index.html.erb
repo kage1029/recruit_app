@@ -8,9 +8,17 @@
 
   <% @posts.each do |post| %>
     <div class="post">
+    <% if post.image? %>
+      <div class="post-image">
+        <%= image_tag post.image.url %>
+      </div>
+    <% else %>
       <img src="https://dime.jp/genre/files/2020/02/shutterstock_572338033-770x514.jpg"　width="560" height="228">
+    <% end %>
       <p>ユーザID：<%= post.user_id %></p>
-      <p>タイトル：<%= post.title %></p>
+      <p>職種：<%= post.occupation %></p>
+      <p>雇用形態：<%= post.status %></p>
+      <h1>タイトル：<%= post.title %></h1>
       <p>本文：<%= post.content %></p>
       <%= link_to '詳細を見る', post %>
     </div>

@@ -25,7 +25,7 @@
   margin-left: 10px;
   font-size: 50px;
   color: #fff;
-  background-color: #006F8E;
+  background-color: #00A4BB;
 }
 
 nav{
@@ -71,7 +71,7 @@ body{
   top: 10px;
   width: 300px;
   color: #fff;
-  background: #30b298;
+  background: #00A4BB;
   margin-left: 300px;
 }
 
@@ -81,6 +81,29 @@ body{
 
 .form-container{
   text-align: center;
+}
+
+img{
+  width: 560px;
+  height: 228px;
+  object-fit: cover;
+}
+
+.post-detail{
+  width: 980px;
+  margin: auto;
+  text-align: left;
+}
+
+.post-detail img{
+  width: 980px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.post p, h1{
+  text-align: left;
+  font-size: 14px;
 }
 
 /* footer */

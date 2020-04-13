@@ -1,27 +1,44 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div class="form-container">
+  <%= form_with(model: post, local: true) do |form| %>
+    <% if post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :タイトル %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= form.label :本文 %>
+      <%= form.text_area :content %>
+    </div>
+
+    <div class="field">
+      <%= form.label :職種 %>
+      <%= form.text_field :occupation %>
+    </div>
+
+    <div class="field">
+      <%= form.label :雇用形態（選択→番号） %>
+      <%= form.text_field :status %>
+    </div>
+
+    <div class="field">
+      <%= form.label :サムネイル %>
+      <%= form.file_field :image %>  
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
